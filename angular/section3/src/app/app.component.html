@@ -1,0 +1,9 @@
+<app-header (featureSelected)="featureSelect($event)"></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes [hidden]="featureSelected !== 'recipes'"></app-recipes>
+      <app-shopping-list [hidden]="featureSelected !== 'shoppingList'"></app-shopping-list>
+    </div>
+  </div>
+</div>

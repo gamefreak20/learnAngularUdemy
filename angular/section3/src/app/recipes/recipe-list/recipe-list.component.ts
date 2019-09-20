@@ -12,9 +12,9 @@ export class RecipeListComponent implements OnInit {
 
   recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'This is a test',
-      'https://vignette.wikia.nocookie.net/p__/images/8/83/Asia_Argento.png/revision/latest?cb=20190502002652&path-prefix=protagonist'),
+      'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg'),
     new Recipe('A Test Recipe2', 'This is a test',
-      'https://vignette.wikia.nocookie.net/p__/images/8/83/Asia_Argento.png/revision/latest?cb=20190502002652&path-prefix=protagonist'),
+      'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg'),
   ];
 
   constructor() { }

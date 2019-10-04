@@ -8,22 +8,29 @@ import {Subject} from "rxjs";
 export class RecipeService {
   recipesChanged = new Subject<Recipe[]>();
 
-  private recipes: Recipe[] = [
-    new Recipe('A Test Recipe', 'This is a test',
-      'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg',
-      [
-        new Ingredient('meat', 1),
-        new Ingredient('fries', 3),
-      ]),
-    new Recipe('A Test Recipe2', 'This is a test',
-      'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg',
-      [
-        new Ingredient('meats', 3),
-        new Ingredient('fries', 3),
-      ]),
-  ];
+  // private recipes: Recipe[] = [
+  //   new Recipe('A Test Recipe', 'This is a test',
+  //     'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg',
+  //     [
+  //       new Ingredient('meat', 1),
+  //       new Ingredient('fries', 3),
+  //     ]),
+  //   new Recipe('A Test Recipe2', 'This is a test',
+  //     'http://technicallyteamann.com/wp-content/uploads/2017/03/Recipe_logo-1.jpeg',
+  //     [
+  //       new Ingredient('meats', 3),
+  //       new Ingredient('fries', 3),
+  //     ]),
+  // ];
+
+  private recipes: Recipe[] = [];
 
   constructor(private slService: ShoppingListService) {}
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
+  }
 
   getRecipes() {
     return this.recipes.slice();
